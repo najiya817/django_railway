@@ -15,7 +15,8 @@
   </head>
   <body class="bg-success">
       <h1>REGISTER HERE!!!</h1><br>
-      <form action="">
+      <form action="" method="post">
+        {% csrf_token %}
         <input type="text" name="username" id="" placeholder=" enter username"><br><br>
         <input type="email" name="email" id="" placeholder="enter email"><br><br>
         <input type="password" name="password" id="" placeholder="enter password"><br><br>

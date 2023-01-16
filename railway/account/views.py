@@ -12,5 +12,10 @@ def log(request):
         return HttpResponse("post request reached")
 
 def register(request):
-    return render(request,"register.html")
+    if request.method=="GET":
+        return render(request,"register.html")
+    elif request.method=="POST":
+        print(request.POST.get("username"))
+        print(request.POST.get("email"))
+        return HttpResponse("post request reached")
     

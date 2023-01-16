@@ -20,4 +20,13 @@
       <h1 class="bg-info" text-light>WELCOME HOME</h1>
       <p style="color:blue;background-color:aqua">{{data}}</p>
   </body>
+  {% for i in list %}
+  <p>{{i}}</p>
+  {% endfor %}
+  <ul>
+    {% for i in list %}
+    <li>{{i}}</li>
+    {% endfor %}
+
+  </ul>
 </html>

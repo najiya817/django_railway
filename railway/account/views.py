@@ -36,3 +36,7 @@ class RegisterView(View):
         print(request.POST.get("username"))
         print(request.POST.get("password"))
         return HttpResponse("Registred")
+
+class MainHome(View):
+    def get(self,request,*args,**kwargs):
+        return render(request,"main_home.html")

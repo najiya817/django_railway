@@ -44,3 +44,12 @@ class CountView(View):
             else:
                 cnt[i]=1
         return render(request,"wrdcnt.html",{"res":cnt})
+    
+class DivView(View):
+    def get(self,request,*args,**kwargs):
+        return render(request,"div.html")
+    def post(self,request,*args,**kwargs):
+        num1=request.POST.get("n1")
+        num2=request.POST.get("n2")
+        resl=int(num1)/int(num2)
+        return render(request,"div.html",{"data":resl})  

@@ -28,4 +28,19 @@ class MulView(View):
         num1=request.POST.get("n1")
         num2=request.POST.get("n2")
         resl=int(num1)*int(num2)
-        return render(request,"mul.html",{"data":resl})        
+        return render(request,"mul.html",{"data":resl})  
+
+
+class CountView(View):
+    def get(self,request,*args,**kwargs):
+        return render(request,"wrdcnt.html")
+    def post(self,request,*args,**kwargs):
+        sent=request.POST.get("strng")
+        words=sent.split(" ")
+        cnt={}
+        for i in words:
+            if i in cnt:
+                cnt[i]+=1
+            else:
+                cnt[i]=1
+        return render(request,"wrdcnt.html",{"res":cnt})

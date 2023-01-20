@@ -9,5 +9,4 @@ urlpatterns=[
     path('count/',CountView.as_view(),name="strng"),
 
     
-  
 ]

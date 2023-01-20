@@ -1,32 +1,36 @@
 from django.shortcuts import render
 from django.views.generic  import View
+from .forms import AddForm
 
 # Create your views here.
 class AddView(View):
     def get(self,request,*args,**kwargs):
-        return render(request,"add.html")
+        f=AddForm
+        return render(request,"add.html",{"form":f})
     def post(self,request,*args,**kwargs):
-        num1=request.POST.get("n1")
-        num2=request.POST.get("n2")
+        num1=request.POST.get("num1")
+        num2=request.POST.get("num2")
         res=int(num1)+int(num2)
         return render(request,"add.html",{"data":res})
 
 
 class SubView(View):
     def get(self,request,*args,**kwargs):
-        return render(request,"sub.html")
+        f=AddForm
+        return render(request,"sub.html",{"form":f})
     def post(self,request,*args,**kwargs):
-        num1=request.POST.get("n1")
-        num2=request.POST.get("n2")
+        num1=request.POST.get("num1")
+        num2=request.POST.get("num2")
         resl=int(num1)-int(num2)
         return render(request,"sub.html",{"data":resl})
 
 class MulView(View):
     def get(self,request,*args,**kwargs):
-        return render(request,"mul.html")
+        f=AddForm
+        return render(request,"mul.html",{"form":f})
     def post(self,request,*args,**kwargs):
-        num1=request.POST.get("n1")
-        num2=request.POST.get("n2")
+        num1=request.POST.get("num1")
+        num2=request.POST.get("num2")
         resl=int(num1)*int(num2)
         return render(request,"mul.html",{"data":resl})  
 
@@ -47,9 +51,10 @@ class CountView(View):
     
 class DivView(View):
     def get(self,request,*args,**kwargs):
-        return render(request,"div.html")
+        f=AddForm
+        return render(request,"div.html",{"form":f})
     def post(self,request,*args,**kwargs):
-        num1=request.POST.get("n1")
-        num2=request.POST.get("n2")
+        num1=request.POST.get("num1")
+        num2=request.POST.get("num2")
         resl=int(num1)/int(num2)
         return render(request,"div.html",{"data":resl})  
